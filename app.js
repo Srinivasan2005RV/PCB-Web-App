@@ -472,7 +472,7 @@ async function confirmDefectSelection(isCorrect) {
 async function loadHistory() {
     try {
         const backendUrl = AZURE_CONFIG.backendUrl;
-        const response = await fetch(`${backendUrl}/history/${userId}`);
+        const response = await fetch(`${backendUrl}/history?user_id=${userId}`);
 
         if (!response.ok) {
             throw new Error('Failed to fetch history');
